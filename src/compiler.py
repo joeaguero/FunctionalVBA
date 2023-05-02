@@ -62,7 +62,7 @@ def build_terminate(arguments: list[int]) -> str:
         return (
             f.read()
              .format(members="".join(
-                map(lambda a: f"\r  This.{a} = Empty", arguments))))
+                map(lambda a: f"\r  Set This.{a} = Nothing", arguments))))
 
 def build_concrete(level: int) -> None:
     sublevels: list[int] = list(range(level, -1, -1))

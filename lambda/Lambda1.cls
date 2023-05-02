@@ -41,7 +41,6 @@ Private Function INullary_Run() As Variant
   LetSet(INullary_Run) = Application.Run(This.Target, This.Arg1)
 End Function
 
-
 Private Sub Class_Terminate()
-  This.Arg1 = Empty
+  Set This.Arg1 = Nothing
 End Sub
