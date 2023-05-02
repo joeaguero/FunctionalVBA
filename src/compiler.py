@@ -118,13 +118,13 @@ def main() -> None:
     levels: int = 6
 
     for level in range(levels + 1):
-        with open(f"../bin/{name_of_abstract_level(level)}.cls", 'w') as f:
+        with open(f"../lambda/{name_of_abstract_level(level)}.cls", 'w') as f:
             f.write(build_abstraction(level))
 
-        with open(f"../bin/{name_of_level(level)}.cls", 'w') as f:
+        with open(f"../lambda/{name_of_level(level)}.cls", 'w') as f:
             f.write(build_concrete(level))
 
-    with open("../bin/FunctionalConstructors.bas", 'w') as f:
+    with open("../lambda/FunctionalConstructors.bas", 'w') as f:
         f.write(build_class(levels))
 
 if __name__ == "__main__":
