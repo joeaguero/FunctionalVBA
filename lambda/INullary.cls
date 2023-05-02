@@ -12,6 +12,6 @@ Attribute VB_Description = "Function Expression"
 Option Explicit
 
 Public Function Run() As Variant
-	Attribute Run.VB_Description = "Executes the calculation"
-  Attribute Run.VB_UserMemID = 0
+Attribute Run.VB_Description = "Executes the calculation"
+Attribute Run.VB_UserMemId = 0
 End Function

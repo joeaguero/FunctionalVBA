@@ -12,6 +12,6 @@ Attribute VB_Description = "INullary Factory"
 Option Explicit
 
 Public Function Apply(ByRef Arg As Variant) As INullary
-  Attribute Apply.VB_Description = "INullary Factory Method"
-  Attribute Apply.VB_UserMemID = 0
+Attribute Apply.VB_Description = "INullary Factory Method"
+Attribute Apply.VB_UserMemId = 0
 End Function
