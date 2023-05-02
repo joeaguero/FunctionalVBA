@@ -12,4 +12,6 @@ Option Explicit
 
 Public Property Get Item1() As Variant: End Property
 Public Property Get Item2() As Variant: End Property
-Public Property Get ToString() As String: End Property
+Public Property Get ToString() As String
+Attribute ToString.VB_UserMemId = 0
+End Property

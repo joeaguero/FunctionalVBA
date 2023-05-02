@@ -33,7 +33,7 @@ Private Property Get IPair_Item2() As Variant
 End Property
 
 Private Property Get IPair_ToString() As String
-  IPair_ToString = "(" & CStr(This.Item1) & ", " & CStr(This.Item2) & ")"
+  IPair_ToString = "( " & CStr(This.Item1) & ", " & CStr(This.Item2) & " )"
 End Property
 
 Private Sub Class_Terminate()
