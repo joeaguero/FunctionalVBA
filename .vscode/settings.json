@@ -1,0 +1,10 @@
+{
+  "files.associations": {
+      "*.cls": "vb",
+      "*.frm": "vb",
+      "*.doccls": "vb",
+      "*.frx": "code-text-binary"
+  },
+  "editor.tabSize": 2,
+  "editor.insertSpaces": false
+}
