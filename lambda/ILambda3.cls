@@ -11,7 +11,6 @@ Attribute VB_Description = "ILambda2 Factory"
 '@Folder("Functional.Abstractions")
 Option Explicit
 
-Public Function Apply(ByRef Arg As Variant) As ILambda2
-Attribute Apply.VB_Description = "ILambda2 Factory Method"
-Attribute Apply.VB_UserMemId = 0
+Public Function Of(ByRef Arg As Variant) As ILambda2
+Attribute Of.VB_UserMemId = 0
 End Function

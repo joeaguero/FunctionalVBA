@@ -7,7 +7,7 @@ Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = False
 Attribute VB_Exposed = False
-'@Folder "Library"
+'@Folder "Library.Data.Concrete"
 Option Explicit
 Implements IPair
 
@@ -32,8 +32,12 @@ Private Property Get IPair_Item2() As Variant
   LetSet(IPair_Item2) = This.Item2
 End Property
 
-Private Property Get IPair_ToString() As String
-  IPair_ToString = "( " & CStr(This.Item1) & ", " & CStr(This.Item2) & " )"
+Private Function IPair_Map(ByRef Func As Variant) As IPair
+  Set IPair_Map = Pair.Of(Func.Of(This.Item1))(Func.Of(This.Item2))
+End Function
+
+Private Property Get IPair_Show() As String
+  IPair_Show = "( " & Show(This.Item1) & ", " & Show(This.Item2) & " )"
 End Property
 
 Private Sub Class_Terminate()

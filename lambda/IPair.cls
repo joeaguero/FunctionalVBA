@@ -7,11 +7,12 @@ Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = False
 Attribute VB_Exposed = False
-'@Folder "Library"
+'@Folder "Library.Data.Abstraction"
 Option Explicit
 
 Public Property Get Item1() As Variant: End Property
 Public Property Get Item2() As Variant: End Property
-Public Property Get ToString() As String
-Attribute ToString.VB_UserMemId = 0
+Public Function Map(ByRef Func As Variant) As IPair: End Function
+Public Property Get Show() As String
+Attribute Show.VB_UserMemId = 0
 End Property

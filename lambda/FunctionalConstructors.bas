@@ -11,13 +11,6 @@ Public Property Let LetSet(ByRef Target As Variant, ByRef Source As Variant)
   End If
 End Property
 
-Public Property Get Nullary(ByVal Target As String) As INullary
-Attribute Nullary.VB_Description = "Builds a lambda function out of the target reference"
-  With New Nullary
-    Set Nullary = .Init0(Target)
-  End With
-End Property
-
 Public Property Get Lambda1(ByVal Target As String) As ILambda1
 Attribute Lambda1.VB_Description = "Builds a lambda function out of the target reference"
   With New Lambda1

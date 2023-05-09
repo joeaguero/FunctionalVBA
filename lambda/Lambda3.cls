@@ -13,13 +13,11 @@ Option Explicit
 Implements ILambda3
 Implements ILambda2
 Implements ILambda1
-Implements INullary
 
 Private Type Data
   Target As String
   Arg1 As Variant
   Arg2 As Variant
-  Arg3 As Variant
 End Type
 
 Private This As Data
@@ -42,38 +40,23 @@ Public Function Init1(ByVal Target As String, ByRef Arg1 As Variant, ByRef Arg2 
   Set Init1 = Me
 End Function
 
-Public Function Init0(ByVal Target As String, ByRef Arg1 As Variant, ByRef Arg2 As Variant, ByRef Arg3 As Variant) As INullary
-  This.Target = Target
-  LetSet(This.Arg1) = Arg1
-  LetSet(This.Arg2) = Arg2
-  LetSet(This.Arg3) = Arg3
-  Set Init0 = Me
-End Function
-
-Public Function ILambda3_Apply(ByRef Arg As Variant) As ILambda2
+Private Function ILambda3_Of(ByRef Arg As Variant) As ILambda2
   With New Lambda3
-    Set ILambda3_Apply = .Init2(This.Target, Arg)
+    Set ILambda3_Of = .Init2(This.Target, Arg)
   End With
 End Function
 
-Public Function ILambda2_Apply(ByRef Arg As Variant) As ILambda1
+Private Function ILambda2_Of(ByRef Arg As Variant) As ILambda1
   With New Lambda3
-    Set ILambda2_Apply = .Init1(This.Target, This.Arg1, Arg)
+    Set ILambda2_Of = .Init1(This.Target, This.Arg1, Arg)
   End With
 End Function
 
-Public Function ILambda1_Apply(ByRef Arg As Variant) As INullary
-  With New Lambda3
-    Set ILambda1_Apply = .Init0(This.Target, This.Arg1, This.Arg2, Arg)
-  End With
-End Function
-
-Private Function INullary_Run() As Variant
-  LetSet(INullary_Run) = Application.Run(This.Target, This.Arg1, This.Arg2, This.Arg3)
+Private Function ILambda1_Of(ByRef Arg As Variant) As Variant
+  LetSet(ILambda1_Of) = Application.Run(This.Target, This.Arg1, This.Arg2, Arg)
 End Function
 
 Private Sub Class_Terminate()
   Set This.Arg1 = Nothing
   Set This.Arg2 = Nothing
-  Set This.Arg3 = Nothing
 End Sub
