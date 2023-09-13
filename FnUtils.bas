@@ -10,9 +10,9 @@ Public Property Let LetSet(ByRef LHS As Variant, RHS As Variant)
     End If
 End Property
 
-Public Function Lambda(Fn As String) As ILambda
-  With New Lambda
-    Set Lambda = .Init(Fn)
+Public Function Fn(Target As String) As Lambda
+  With New CLambda
+    Set Fn = .Init(Target)
   End With
 End Function
 
