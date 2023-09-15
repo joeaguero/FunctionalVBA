@@ -1,4 +1,4 @@
-Attribute VB_Name = "Lambda"
+Attribute VB_Name = "Misc"
 '@Folder "Lambda.Primitives"
 Option Explicit
 Option Private Module
