@@ -13,7 +13,7 @@ Implements Args
 
 Private Type Data
   Arg As Variant
-  Prev As IArgs
+  Prev As Args
   Size As Long
 End Type
 
@@ -30,7 +30,7 @@ Private Property Get Args_Arg() As Variant
   LetSet(Args_Arg) = This.Arg
 End Property
 
-Private Property Get Args_Prev() As IArgs
+Private Property Get Args_Prev() As Args
   Set Args_Prev = This.Prev
 End Property
 
