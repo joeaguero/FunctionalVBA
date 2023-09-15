@@ -1,22 +1,8 @@
-Attribute VB_Name = "FnUtils"
+Attribute VB_Name = "Lambda"
 '@Folder "Lambda.Primitives"
 Option Explicit
+Option Private Module
 
-Public Property Let LetSet(ByRef LHS As Variant, RHS As Variant)
-    If IsObject(RHS) Then
-        Set LHS = RHS
-    Else
-        LHS = RHS
-    End If
-End Property
-
-Public Function Fn(Target As String) As Lambda
-  With New CLambda
-    Set Fn = .Init(Target)
-  End With
-End Function
-
-' Misc Utils
 Public Function PadLeft(Char As String, Size As Long, Text As Variant)
   Dim OutText As String: OutText = CStr(Text)
   Dim PadLength As Long: PadLength = Size - Len(OutText)
