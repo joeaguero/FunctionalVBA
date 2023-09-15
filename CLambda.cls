@@ -32,7 +32,7 @@ Private Function Lambda_Add(ParamArray Items() As Variant) As Lambda
     End With
   Next I
   
-  With New Lambda
+  With New CLambda
     Set Lambda_Add = .Init(This.Fn, Temp)
   End With
   Set Temp = Nothing
